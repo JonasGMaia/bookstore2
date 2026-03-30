@@ -4,9 +4,9 @@ from product.models import Product
 from product.serializers.product_serializer import ProductSerializer
 
 
-class OrderSerializer(serializer.ModelSerializer):
+class OrderSerializer(serializers.ModelSerializer):
     product = ProductSerializer(required=True, many=True)
-    total = serializer.SerializerMethodField()
+    total = serializers.SerializerMethodField()
 
     def get_total(self, instance):
         total = sum([product.price for product in instance.product.all()])

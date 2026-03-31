@@ -89,3 +89,5 @@ class OrderFactoryTest(TestCase):
         product = ProductFactory()
         order = OrderFactory(product=[product])
         self.assertIn(product, order.product.all())
+
+

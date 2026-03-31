@@ -38,7 +38,7 @@ class TestProductViewSet(APITestCase):
         data = json.dumps({
             'title': 'notebook',
             'price': 800.00,
-            'categories.id': [category.id]
+            'categories_id': [category.id]
         })
 
         response = self.client.post(

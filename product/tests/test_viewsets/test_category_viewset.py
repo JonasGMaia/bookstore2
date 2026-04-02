@@ -28,7 +28,7 @@ class TestCategoryViewSet(APITestCase):
         )
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        category_data = json.loads(response.content)
+        category_data = json.loads(response.content)['results']
 
         self.assertEqual(category_data[0]['title'], self.category.title)
 
